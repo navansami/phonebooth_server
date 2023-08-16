@@ -15,7 +15,7 @@ const connection = async () => {
         if(!connected) throw Error("Unable to connect to database")
         console.log(`Database Connected: ${process.env.DBNAME}`)
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
     }
 }
 
