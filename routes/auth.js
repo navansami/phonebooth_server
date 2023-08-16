@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const router = require('express').Router()
+const authCtlr = require('../controllers/auth')
 
 // Login
 router
@@ -8,7 +9,7 @@ router
 // Registration
 router
     .route('/register')
-    .post(() => console.log(`Route not yet defined`))
+    .post(authCtlr.Registration)
 
 // Reset Password
 router()
