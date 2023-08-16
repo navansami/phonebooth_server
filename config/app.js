@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 
 const app = express()
+const authRouter = require('../routes/auth');
 
 // Middleware
 app.use(express.json())
@@ -16,5 +17,7 @@ app.get('/', (req, res) => {
         data: "api v1 index"
     })
 })
+
+app.use("/api/v1/auth", authRouter)
 
 module.exports = app;
