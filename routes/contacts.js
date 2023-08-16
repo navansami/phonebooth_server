@@ -5,7 +5,7 @@ const contactCtlr = require('../controllers/contacts')
 router
     .route('/')
     .get(contactCtlr.getAllContacts)
-    // .post(() => console.log(`Route not yet defined`))
+    .post(contactCtlr.addNewContact)
 
 // By ID
 // router

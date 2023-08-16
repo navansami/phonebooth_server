@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const contactSchema = new mongoose.Schema({
-    _creator: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
-    name: { type: String, required: true },
+    // _creator: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    name: { type: String, required: true, unique: true },
     extension: { type: String, required: false },
     company: { type: String, required: true },
     department: { type: String, required: false },
