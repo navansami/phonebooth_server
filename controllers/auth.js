@@ -20,8 +20,8 @@ const Login = async (req,res) => {
 
         // If all good and dandy?
         res.status(200)
+            // TODO: set expiry date
             .cookie('token', token, {
-                expires: new Date(Date.now() + (24*60)),
                 secure: false,
                 httpOnly: true
             })

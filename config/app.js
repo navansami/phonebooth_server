@@ -1,11 +1,15 @@
+const cookieParser = require('cookie-parser')
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 
 const app = express()
+const authorize = require('../middleware/verifyToken')
 const authRouter = require('../routes/auth');
+const contactRouter = require('../routes/contacts')
 
 // Middleware
+app.use(cookieParser())
 app.use(express.json())
 app.use(cors('*'))
 app.use(morgan('dev'))
@@ -19,5 +23,6 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api/v1/auth/", authRouter)
+app.use("/api/v1/contacts/", authorize, contactRouter )
 
 module.exports = app;

@@ -1,0 +1,2 @@
+TODO: set expiry on cookie or else cookie will not expire
+FILE: controllers/auth.js

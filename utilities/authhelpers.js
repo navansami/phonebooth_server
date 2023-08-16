@@ -15,3 +15,8 @@ exports.validatePassword = async (password, hash) => {
 exports.createToken = async payload => {
     return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '7d' })
 }
+
+exports.setExpireDate = () => {
+    const datenow = new Date().now()
+    return datenow.sethours(datenow.getHours() + 48)
+}
