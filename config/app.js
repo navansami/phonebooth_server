@@ -12,7 +12,7 @@ const contactRouter = require('../routes/contacts')
 app.use(cookieParser())
 app.use(express.json())
 app.use(cors('*'))
-app.use(morgan('dev'))
+app.use(morgan('combined'))
 
 // Routes
 app.get('/', (req, res) => {
