@@ -23,6 +23,6 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api/v1/auth/", authRouter)
-app.use("/api/v1/contacts/", authorize, contactRouter )
+app.use("/api/v1/contacts/", contactRouter )
 
 module.exports = app;
